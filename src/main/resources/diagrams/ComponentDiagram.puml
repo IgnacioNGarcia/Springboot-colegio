@@ -1,0 +1,55 @@
+@startuml
+
+package "Spring Boot App" {
+    [ColegioController]
+    [EspecialidadController]
+    [CursoController]
+    [MateriaController]
+    [AlumnoController]
+    [ProfesorController]
+
+    [ColegioService]
+    [EspecialidadService]
+    [CursoService]
+    [MateriaService]
+    [AlumnoService]
+    [ProfesorService]
+
+    [ColegioRepository]
+    [EspecialidadRepository]
+    [CursoRepository]
+    [MateriaRepository]
+    [AlumnoRepository]
+    [ProfesorRepository]
+
+    [Database]
+}
+
+[ColegioController] --> [ColegioService]
+[EspecialidadController] --> [EspecialidadService]
+[CursoController] --> [CursoService]
+[MateriaController] --> [MateriaService]
+[AlumnoController] --> [AlumnoService]
+[ProfesorController] --> [ProfesorService]
+
+[ColegioService] --> [ColegioRepository]
+[EspecialidadService] --> [EspecialidadRepository]
+[CursoService] --> [CursoRepository]
+[MateriaService] --> [MateriaRepository]
+[AlumnoService] --> [AlumnoRepository]
+[ProfesorService] --> [ProfesorRepository]
+
+[ColegioService] --> [EspecialidadRepository]
+[CursoService] --> [MateriaRepository]
+[CursoService] --> [AlumnoRepository]
+[CursoService] --> [ProfesorRepository]
+
+[ColegioRepository] --> [Database]
+[EspecialidadRepository] --> [Database]
+[CursoRepository] --> [Database]
+[MateriaRepository] --> [Database]
+[AlumnoRepository] --> [Database]
+[ProfesorRepository] --> [Database]
+
+@enduml
+
