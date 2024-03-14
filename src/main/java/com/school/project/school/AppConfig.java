@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -63,6 +64,11 @@ public class AppConfig {
             new Profesor("Fleur", "Delacleur", 214231, 26, LocalDate.of(1998,3,14), 670D),
             new Profesor("Leandro", "Pinkas", 66666666, 46, LocalDate.of(1930,3,10), 300D)
         );
+    }
+
+    @Bean
+    ModelMapper getModelMapper(){
+        return new ModelMapper();
     }
 
     

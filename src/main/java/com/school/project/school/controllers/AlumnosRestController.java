@@ -3,6 +3,7 @@ package com.school.project.school.controllers;
 
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,20 +19,24 @@ import com.school.project.school.services.AlumnoService;
 public class AlumnosRestController {
     @Autowired
     private AlumnoService service;
+
     
     @GetMapping("/list")
-    public List<AlumnoDto> showAll(){
-        return service.findAll().stream().map(a->{
-            AlumnoDto alumnoDto = new AlumnoDto(a.getNombre(),a.getApellido(),a.getEdad());
-            return alumnoDto;
-        }).toList();
+    public List<Alumno> showAll(){
+        return service.findAll();
     }
     @GetMapping("/dni/{dni}")
-    public AlumnoDto searchAlumno(@PathVariable(name = "dni") Integer dni){
-        Alumno alumno = service.findByDni(dni);
-        AlumnoDto alumnoDto = new AlumnoDto(alumno.getNombre(),alumno.getApellido(),alumno.getEdad());
-
-        return alumnoDto;
+    public Alumno searchAlumno(@PathVariable(name = "dni") Integer dni){
+        return service.findByDni(dni);
     }
+    @GetMapping("/dto/list")
+    public List<AlumnoDto> showAllDto(){
+        return service.findAllDto();
+    }
+    @GetMapping("/dto/dni/{dni}")
+    public AlumnoDto searchAlumnoDto(@PathVariable(name = "dni") Integer dni){
+        return service.findByDniDto(dni);
+    }
+    
     
 }
