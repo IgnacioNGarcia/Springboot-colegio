@@ -1,0 +1,65 @@
+@startuml 
+title Estructura colegios
+
+class Colegio{
+    - String nombre
+    - String direccion
+    - List<Especialidad> especialidades
+}
+
+class Especialidad{
+    - String nombre
+    - Integer duracion
+    - List<Curso> cursos
+}
+
+class Curso{
+    - Integer id
+    - String nombre
+    - Especialidad especialidad
+    - Alumno alumnos
+    - Integer anio
+    - List<Materia> materias
+}
+
+class Materia{
+    - String nombre
+    - List<Profesor> profesores
+    // En un curso puede dictar más de un profesor la materia, ejemplo martes uno jueves el otro
+}
+
+Class Persona {
+    - String nombre
+    - String apellido
+    - Integer dni
+    - Integer edad
+    - Date fechaNacimiento
+}
+class Alumno{
+    - String nombre
+    - String apellido
+    - Integer dni
+    - Integer edad
+    - Date fechaNacimiento
+    - Curso curso
+}
+
+class Profesor{
+    - String nombre
+    - String apellido
+    - Integer dni
+    - Integer edad
+    - Date fechaNacimiento
+    - List<Materia> materiasCapacitado
+    - Double sueldo
+}
+
+Colegio o--> Especialidad
+Especialidad o--> Curso
+Curso o--> Alumno
+Curso o--> Materia 
+Materia o--o Profesor
+Alumno -d-|> Persona
+Profesor -l-|> Persona
+
+@enduml
