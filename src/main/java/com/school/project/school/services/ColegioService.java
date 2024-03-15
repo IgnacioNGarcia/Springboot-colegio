@@ -2,14 +2,14 @@ package com.school.project.school.services;
 
 import java.util.List;
 
-import com.school.project.school.models.Alumno;
-import com.school.project.school.models.Colegio;
-import com.school.project.school.models.Curso;
-import com.school.project.school.models.Profesor;
+import com.school.project.school.dto.AlumnoDto;
+import com.school.project.school.dto.CursoDto;
+import com.school.project.school.dto.ProfesorDto;
+import com.school.project.school.models.ColegioDto;
 
 public interface ColegioService {
-    Colegio getData();
-    List<Alumno> showAlumnos();
-    List<Profesor> showProfesores();
-    List<Curso> showCursos();
+    ColegioDto getData();
+    List<AlumnoDto> showAlumnos();
+    List<ProfesorDto> showProfesores();
+    List<CursoDto> showCursos();
 }

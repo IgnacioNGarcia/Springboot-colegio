@@ -20,17 +20,17 @@ public class ColegioRepositoryImpl implements ColegioRepository{
     }
 
     @Override
-    public List<Alumno> showAlumnos() {
+    public List<Alumno> findAlumnos() {
         return colegio.getAlumnos();
     }
 
     @Override
-    public List<Profesor> showProfesores() {
+    public List<Profesor> findProfesores() {
         return colegio.getProfesores();
     }
 
     @Override
-    public List<Curso> showCursos() {
+    public List<Curso> findCursos() {
         return colegio.getCursos();
     }
     

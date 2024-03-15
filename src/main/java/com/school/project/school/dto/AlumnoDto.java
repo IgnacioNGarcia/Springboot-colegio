@@ -1,6 +1,6 @@
 package com.school.project.school.dto;
 
-import com.school.project.school.models.Curso;
+
 
 public class AlumnoDto {
     private String nombre;

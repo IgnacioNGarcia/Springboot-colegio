@@ -1,7 +1,7 @@
 package com.school.project.school.dto;
 
 import java.util.List;
-import com.school.project.school.models.Materia;
+
 
 public class CursoDto {
     private Integer id; 

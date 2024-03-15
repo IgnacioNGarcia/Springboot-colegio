@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.school.project.school.models.Alumno;
-import com.school.project.school.models.Colegio;
-import com.school.project.school.models.Curso;
-import com.school.project.school.models.Profesor;
+import com.school.project.school.dto.AlumnoDto;
+import com.school.project.school.dto.CursoDto;
+import com.school.project.school.dto.ProfesorDto;
+import com.school.project.school.models.ColegioDto;
 import com.school.project.school.services.ColegioService;
 
 @RequestMapping("/api/colegio")
@@ -21,19 +21,19 @@ public class ColegioRestController {
     private ColegioService service;
 
     @GetMapping("/data")
-    public Colegio getData(){
+    public ColegioDto getData(){
         return service.getData();
     }
     @GetMapping("/alumnos")
-    public List<Alumno> showAlumnos(){
+    public List<AlumnoDto> showAlumnos(){
         return service.showAlumnos();
     }
     @GetMapping("/profesores")
-    public List<Profesor> showProfesores(){
+    public List<ProfesorDto> showProfesores(){
         return service.showProfesores();
     }
     @GetMapping("/cursos")
-    public List<Curso> showCursos(){
+    public List<CursoDto> showCursos(){
         return service.showCursos();
     }
 

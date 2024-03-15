@@ -1,6 +1,5 @@
 package com.school.project.school.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.school.project.school.dto.AlumnoDto;
 import com.school.project.school.dto.CursoDto;
-import com.school.project.school.dto.MateriaDto;
-import com.school.project.school.dto.ProfesorDto;
 import com.school.project.school.models.Curso;
-import com.school.project.school.models.Materia;
-import com.school.project.school.models.Profesor;
 import com.school.project.school.services.CursoService;
 
 @RestController

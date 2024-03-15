@@ -44,7 +44,6 @@ public class AppConfig {
     @Bean
     @Autowired
     List<Alumno> alumnosColegio(List<Curso> cursosColegio){     
-        Map<String,Curso> cursosMapeados = cursosColegio.stream().collect(Collectors.toMap(Curso::getNombre, curso -> curso));   
         
         List<Alumno> alumnos = Arrays.asList(
             new Alumno("Ignacio", "Garcia", 41047964,25, LocalDate.of(1998, 3,18),1),

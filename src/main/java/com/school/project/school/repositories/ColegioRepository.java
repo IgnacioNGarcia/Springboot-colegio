@@ -9,8 +9,8 @@ import com.school.project.school.models.Profesor;
 
 public interface ColegioRepository {
     Colegio getData();
-    List<Alumno> showAlumnos();
-    List<Profesor> showProfesores();
-    List<Curso> showCursos();
+    List<Alumno> findAlumnos();
+    List<Profesor> findProfesores();
+    List<Curso> findCursos();
     
 }
